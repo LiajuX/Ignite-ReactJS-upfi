@@ -1,4 +1,13 @@
 import {
+  useState,
+  SetStateAction,
+  Dispatch,
+  ForwardRefRenderFunction,
+  forwardRef,
+  useCallback,
+  useEffect,
+} from 'react';
+import {
   Box,
   FormLabel,
   CircularProgress,
@@ -12,16 +21,6 @@ import {
   useToast,
   Tooltip,
 } from '@chakra-ui/react';
-import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
-import {
-  useState,
-  SetStateAction,
-  Dispatch,
-  ForwardRefRenderFunction,
-  forwardRef,
-  useCallback,
-  useEffect,
-} from 'react';
 import {
   FieldError,
   FieldValues,
@@ -29,6 +28,8 @@ import {
   UseFormTrigger,
 } from 'react-hook-form';
 import { FiAlertCircle, FiPlus } from 'react-icons/fi';
+import axios, { AxiosRequestConfig, CancelTokenSource } from 'axios';
+
 import { api } from '../../services/api';
 
 export interface FileInputProps {
@@ -174,6 +175,7 @@ const FileInputBase: ForwardRefRenderFunction<
                 >
                   <CircularProgressLabel>{progress}%</CircularProgressLabel>
                 </CircularProgress>
+
                 <Text as="span" pt={2} textAlign="center">
                   Enviando...
                 </Text>
@@ -201,6 +203,7 @@ const FileInputBase: ForwardRefRenderFunction<
                   flexDir="column"
                 >
                   <Icon as={FiPlus} w={14} h={14} />
+
                   <Text as="span" pt={2} textAlign="center">
                     Adicione sua imagem
                   </Text>
