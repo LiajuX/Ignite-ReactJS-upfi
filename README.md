@@ -1,5 +1,4 @@
 <h1 align="center">
-  <br>
   <img src="https://github.com/LiajuX/Ignite-ReactJS-upfi/blob/master/public/logo.svg" alt="Spacetraveling" width="400px">
 </h1>
 
